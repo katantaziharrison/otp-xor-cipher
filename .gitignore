@@ -216,3 +216,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# OTP-generated files and secret key material
+key.bin
+ciphertext.bin
+recovered.txt
