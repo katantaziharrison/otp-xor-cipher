@@ -72,3 +72,38 @@ If `diff` produces no output, the recovered file is identical to the original pl
 - `.gitignore` — prevents secret and generated files from being committed.
 
 The key, ciphertext, and recovered output files are generated locally and are not stored in the Git repository.
+
+## RSA Cipher Exercise
+
+The `rsa_cipher.py` program demonstrates RSA key generation, encryption, and decryption using:
+
+```text
+P = 7
+Q = 11
+```
+
+The program calculates:
+
+```text
+N = 77
+W = 60
+E = 7
+D = 43
+```
+
+The resulting keys are:
+
+```text
+Public key  = (7, 77)
+Private key = (43, 77)
+```
+
+It encrypts the numerical message `9` to produce ciphertext `37`, then decrypts `37` to recover the original message.
+
+Run the program with:
+
+```bash
+python3 rsa_cipher.py
+```
+
+The small prime numbers in this exercise are intended only for demonstrating RSA and are not secure for real applications.
