@@ -141,3 +141,26 @@ python3 diffie_hellman.py
 ```
 
 The small parameters and fixed private values are used only for educational purposes and are not secure for real applications.
+
+## Integer and Byte-Array Conversion
+
+The `integer_byte_conversion.py` program demonstrates both conversions required by the exercise:
+
+- Integer to a fixed-size byte array using `int.to_bytes()`
+- Byte array back to an integer using `int.from_bytes()`
+
+Using four-byte little-endian encoding:
+
+```text
+857870592 → [0x00, 0x11, 0x22, 0x33]
+[0x00, 0x11, 0x22, 0x33] → 857870592
+```
+
+Run the program with:
+
+```bash
+python3 integer_byte_conversion.py
+```
+
+The program also verifies that the produced byte array and recovered integer match the expected results.
+
