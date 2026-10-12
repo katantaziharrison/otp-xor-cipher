@@ -107,3 +107,37 @@ python3 rsa_cipher.py
 ```
 
 The small prime numbers in this exercise are intended only for demonstrating RSA and are not secure for real applications.
+
+## Diffie-Hellman Key Exchange
+
+The `diffie_hellman.py` program implements the generic Diffie-Hellman scheme demonstrated in Java.
+
+The example uses:
+
+```text
+Prime modulus: p = 23
+Generator: g = 5
+Alice's private value: a = 6
+Bob's private value: b = 15
+```
+
+The calculated public values are:
+
+```text
+Alice's public value: A = 8
+Bob's public value: B = 19
+```
+
+After exchanging their public values, Alice and Bob independently calculate the same shared secret:
+
+```text
+Shared secret = 2
+```
+
+Run the program with:
+
+```bash
+python3 diffie_hellman.py
+```
+
+The small parameters and fixed private values are used only for educational purposes and are not secure for real applications.
