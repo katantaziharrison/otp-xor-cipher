@@ -164,3 +164,43 @@ python3 integer_byte_conversion.py
 
 The program also verifies that the produced byte array and recovered integer match the expected results.
 
+## Generic RSA and Library Interoperability
+
+The `rsa_generic_library.py` program verifies that generic RSA and a cryptographic library use the same underlying mathematical operation.
+
+The program:
+
+1. Generates a 1024-bit RSA key pair using PyCryptodome.
+2. Encodes a text message as UTF-8 bytes.
+3. Manually adds zero padding to create a fixed 128-byte RSA block.
+4. Converts the padded block into a large integer.
+5. Encrypts it using generic RSA:
+
+   \[
+   C = M^E \bmod N
+   \]
+
+6. Decrypts the ciphertext using PyCryptodome's raw RSA private-key operation.
+7. Removes the manual padding and reconstructs the original text.
+8. Confirms that the recovered message matches the original.
+
+Install the required dependency:
+
+```bash
+python -m pip install pycryptodome
+```
+
+Run the program:
+
+```bash
+python rsa_generic_library.py
+```
+
+Successful execution includes:
+
+```text
+Decrypted padded block matches original: True
+Recovered message matches original: True
+```
+
+The zero-padding and raw RSA operations are included only for educational purposes. Secure applications should use an established padding scheme such as RSA-OAEP.
