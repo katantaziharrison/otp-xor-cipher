@@ -202,5 +202,27 @@ Successful execution includes:
 Decrypted padded block matches original: True
 Recovered message matches original: True
 ```
+The final output Looks like this
+RSA Key Size: 1024 bits 
+public exponent (E): 65537
+RSA Block Size: 128 bytes
+Original Message: Generic RSA and Library RSA are the same!
+Message length: 41 bytes
+Manual padding length: 87 bytes
+Padded block length: 128 bytes
+Message Integer is smaller than modulus: True
+Ciphertext block length: 128 bytes
+Ciphertext in Hexadecimal: (16 bytes per line):
+0000: 60 ad 5f 0e 69 13 06 de 19 ae ed cc 9e a1 e9 89
+0010: 73 8f 62 e0 91 e0 ca b6 da 7f 6d 7e 58 5f 11 69
+0020: 2f cb c0 ec 7a 57 a9 b1 d7 9f db 07 d7 92 8a 8b
+0030: 75 0c 5e 71 f2 94 27 2c 0b 05 a0 64 56 05 47 97
+0040: b0 f2 9d dd 2d 4d f0 5b a9 5f 3e ae 12 96 f3 84
+0050: ee 96 52 d2 82 8a 87 85 c4 ce fb 26 27 f7 a1 ca
+0060: 9f 48 d0 d8 c5 9c 5f 6b 38 4e 38 e7 7e 24 7d 2c
+0070: 27 fa 5a 49 1f 6a 48 79 9c 1f f1 89 21 75 97 9f
+Decrypted padded block matches original: True
+Recovered Message: Generic RSA and Library RSA are the same!
+Recovered message matches original: True
 
 The zero-padding and raw RSA operations are included only for educational purposes. Secure applications should use an established padding scheme such as RSA-OAEP.
