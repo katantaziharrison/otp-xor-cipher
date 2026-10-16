@@ -226,3 +226,61 @@ Recovered Message: Generic RSA and Library RSA are the same!
 Recovered message matches original: True
 
 The zero-padding and raw RSA operations are included only for educational purposes. Secure applications should use an established padding scheme such as RSA-OAEP.
+
+## OTP Key-Guess Demonstration
+
+The `otp_key_guess.py` program demonstrates how different key streams can make the same ciphertext produce different plaintexts.
+
+The exercise uses alphabetic modulo-26 arithmetic:
+
+```text
+A = 0, B = 1, ..., Z = 25
+```
+
+Decryption is calculated using:
+
+```text
+P = (C - K) mod 26
+```
+
+The supplied ciphertext and Eve's second key are:
+
+```text
+Ciphertext: EQNVZ
+Key:        TRTSH
+```
+
+Eve's key produces:
+
+```text
+LZUDS
+```
+
+Therefore, it does not produce the expected plaintext `LATER`.
+
+The corrected key and alternative key stream are:
+
+```text
+EQNVZ - TQURI = LATER
+EQNVZ - RMSRI = NEVER
+```
+
+This demonstrates that an OTP ciphertext can be made to produce different meaningful plaintexts when different valid key streams are used.
+
+Run the program with:
+
+```bash
+python3 otp_key_guess.py
+```
+Ciphertext: EQNVZ
+Eve's Second Key: TRTSH
+Decrypted with Eve's second key: LZUDS
+Eve's second key is incorrect because it does not produce LATER.
+
+Required plaintext: LATER
+Corrected key:      TQURI
+Verification:       LATER
+
+Required plaintext: NEVER
+Alternate key:      RMSRI
+Verification:       NEVER
